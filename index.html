@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="./app.js" defer></script>
   <title>Document</title>
 </head>
+
 <body>
-  
+  <div id="app">
+    <h2>{{ message }}</h2>
+
+    <span>{{ counter }}</span>
+    <p v-if="counterMayor">{{ validator }}</p>
+    <button v-on:click="suma()">+</button>
+    <button v-on:click="resta()">-</button>
+    <button v-on:click="multipl()">*</button>
+  </div>
 </body>
+
 </html>
