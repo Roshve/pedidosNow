@@ -13,13 +13,16 @@
 
 <body>
   <div id="app">
-    <h2>{{ message }}</h2>
+    <div class="box">
+      <h2>{{ message }}</h2>
 
-    <span>{{ counter }}</span>
-    <p v-if="counterMayor">{{ validator }}</p>
-    <button v-on:click="suma()">+</button>
-    <button v-on:click="resta()">-</button>
-    <button v-on:click="multipl()">*</button>
+      <span>{{ counter }}</span>
+      <p v-if="counterMayor">{{ validator }}</p>
+      <div class="container-buttons">
+        <button v-on:click="suma()">+</button>
+        <button v-on:click="resta()">-</button>
+      </div>
+    </div>
   </div>
 </body>
 
