@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
   display: flex;
   justify-content: center;
@@ -9,6 +11,7 @@ body {
   background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height: 100vh;
+  font-family: 'Nunito', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -16,14 +19,70 @@ body {
 .box {
   border-radius: 12px;
   background: white;
-  height: 300px;
-  width: 300px;
+  height: 500px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
-.container-buttons {
+.box-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box-buttons {
   margin-top: 20px;
+}
+
+.box-suma-resta {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  background: white;
+  font-weight: 700;
+}
+
+.box-suma-resta:after {
+  content: "";
+  background: gray;
+  display: block;
+  position: absolute;
+  padding: 20px;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.box-suma-resta:active:after {
+  padding: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+img {
+  height: 250px;
+  width: 350px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }

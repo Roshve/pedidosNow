@@ -1,18 +1,14 @@
 var app = new Vue({
   el: "#app",
   data: {
-    message: '¡Hola Mundo!',
-    counter: 0,
-    validator: 'Alto ahi velocista'
+    tituloCounter: 'Contador',
+    counter: 20,
+    validator: './hqdefault.jpg',
   },
 
   computed: {
-    hola() {
-      return this.message.split('').reverse().join('')
-    },
-
     counterMayor() {
-      return this.counter >= 5
+      return this.counter >= 30
     },
   },
 
@@ -22,9 +18,6 @@ var app = new Vue({
     },
     resta() {
       return this.counter--
-    },
-    multipl() {
-      return this.counter * 2
     },
   }
 })
