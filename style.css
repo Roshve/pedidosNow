@@ -19,7 +19,7 @@ body {
 .box {
   border-radius: 12px;
   background: white;
-  height: 500px;
+  height: 300px;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -40,41 +40,25 @@ body {
   flex-direction: column;
 }
 
-.box-buttons {
-  margin-top: 20px;
-}
-
-.box-suma-resta {
-  position: relative;
-  height: 40px;
-  width: 40px;
-  border-radius: 4px;
-  border: 1px solid gray;
-  background: white;
-  font-weight: 700;
-}
-
-.box-suma-resta:after {
-  content: "";
-  background: gray;
-  display: block;
-  position: absolute;
-  padding: 20px;
-  top: 0;
-  right: 0;
-  opacity: 0;
-  transition: all 0.8s
-}
-
-.box-suma-resta:active:after {
-  padding: 0;
-  opacity: 1;
-  transition: 0s
-}
-
-img {
+.table {
+  border-radius: 8px;
+  width: 450px;
   height: 250px;
-  width: 350px;
+}
+
+.table-header {
+  color: #03001e;
+  background-color: #efefef;
+}
+
+.table-content-par {
+  background-color: #454545;
+  color: white;
+}
+
+.table-content-impar {
+  background-color: #2b2b2b;
+  color: white;
 }
 
 .fade-enter-active,
