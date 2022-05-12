@@ -1,18 +1,17 @@
 <template>
-  <main id="app" class="box">
-    <challenge-table :users="first.users" :titles="first.titles" header />
-    <challenge-table :users="second.users" />
-    <challenge-table :users="third.users" />
-  </main>
+  <div id="app">
+    <view-home />
+  </div>
 </template>
 
 <script>
-import ChallengeTable from "./components/ChallengeTable.vue";
+// import ChallengeTable from "./components/ChallengeTable.vue";
+import ViewHome from "./views/ViewHome.vue";
 
 export default {
   name: "App",
   components: {
-    ChallengeTable
+    ViewHome,
   },
 
   data: () => ({
