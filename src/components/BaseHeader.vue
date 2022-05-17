@@ -24,7 +24,7 @@
             <template #button-content>
               <b-icon-cart2 variant="light" />
             </template>
-            <b-dropdown-item href="#">aqui iria un v-for</b-dropdown-item>
+            <b-dropdown-item v-for="(cart, index) in carts" :key="index">{{ cart }}</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -35,5 +35,13 @@
 <script>
 export default {
   name: "BaseHeader",
+
+  props: {
+    carts: {
+      type: Array,
+      default: () => [],
+      required: true,
+    }
+  }
 };
 </script>
