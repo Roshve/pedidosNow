@@ -6,10 +6,8 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
-
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ms-auto">
-
           <b-nav-item-dropdown right no-caret>
             <!-- Using 'button-content' slot -->
             <template #button-content>
@@ -19,12 +17,21 @@
             <b-dropdown-item href="#">Iniciar Sesión</b-dropdown-item>
             <b-dropdown-item href="#">Cerrar Sesión</b-dropdown-item>
           </b-nav-item-dropdown>
-          <b-nav-item-dropdown right no-caret>
+          <b-nav-item-dropdown right no-caret class="me-5 pe-5">
             <!-- Using 'button-content' slot -->
             <template #button-content>
               <b-icon-cart2 variant="light" />
+              <span class="ms-2 p-1 px-2 cart-shopping-counter">{{ cartlist }}</span>
             </template>
-            <b-dropdown-item v-for="(cart, index) in carts" :key="index">{{ cart }}</b-dropdown-item>
+            <b-dropdown-item
+              class="cart-shopping"
+              v-for="(cart, index) in carts"
+              :key="index"
+            >
+              <img class="cart-shopping-img" :src="cart.img" alt="" />
+              <span class="cart-shopping-title">{{ cart.title }}</span>
+              <span>{{ cart.price }}</span>
+            </b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -41,7 +48,37 @@ export default {
       type: Array,
       default: () => [],
       required: true,
+    },
+  },
+  computed:{
+    cartlist() {
+      return this.carts.length
     }
   }
 };
 </script>
+<style>
+.cart-shopping {
+  border-radius: 8px;
+  background: #fff;
+}
+
+.cart-shopping a {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-shopping-img {
+  height: 100px;
+}
+
+.cart-shopping-title {
+  white-space: pre-wrap;
+}
+
+.cart-shopping-counter {
+  color: #fff;
+  background: rgb(244, 85, 85);
+  border-radius: 4px;
+}
+</style>
