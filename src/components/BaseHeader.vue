@@ -30,7 +30,7 @@
             >
               <img class="cart-shopping-img" :src="cart.img" alt="" />
               <span class="cart-shopping-title">{{ cart.title }}</span>
-              <span>{{ cart.price }}</span>
+              <span class="cart-shopping-price ms-auto mt-2 fw-bold">{{ cart.price }}</span>
             </b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -47,7 +47,7 @@ export default {
     carts: {
       type: Array,
       default: () => [],
-      required: true,
+      required: false,
     },
   },
   computed:{
@@ -69,7 +69,7 @@ export default {
 }
 
 .cart-shopping-img {
-  height: 100px;
+  height: 120px;
 }
 
 .cart-shopping-title {
